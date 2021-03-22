@@ -1,0 +1,161 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f5f5f5;
+  font: 14px "Foo Regular", "Bar Sans", sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+div,
+label,
+p {
+  cursor: default;
+  user-select: none;
+}
+
+.code-wrapper {
+  position: relative;
+}
+
+code {
+  user-select: text !important;
+  cursor: text;
+  position: absolute;
+  background-color: #333333;
+  top: 4em;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  margin: 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+button {
+  font-size: 1em;
+  background-color: #4c8bf5;
+  color: #ffffff;
+  border-radius: 0.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  min-width: 10em;
+  border: 0;
+}
+button:disabled {
+  opacity: 0.7;
+}
+input[type="text"],
+select {
+  border: 1px solid #bbb;
+  border-radius: 0.3em;
+  height: 2.5em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
+  font-size: 1em;
+}
+
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+}
+
+select {
+  min-width: 8em;
+}
+
+label {
+  font-size: 0.9em;
+}
+
+.form-row {
+  padding: 0.5em;
+}
+
+.server-info-form-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.server-info-form-row-host {
+  flex: 1;
+}
+.server-info-form-row-port {
+  width: 10em;
+  margin-left: 0.5em;
+}
+
+.server-info-form-row-connect {
+  width: 10em;
+  margin-left: 0.5em;
+}
+.server-info-form-row-port input,
+.server-info-form-row-host input {
+  width: 100%;
+}
+.main-content {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  top: 5em;
+  right: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+.sidebar {
+  width: 20em;
+  position: relative;
+}
+
+#disconnectButton {
+  display: none;
+}
+
+#databasesSelect {
+  width: 100%;
+}
+#collectionSelect {
+  position: absolute;
+  top: 4.5em;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.5em 0;
+  overflow: auto;
+}
+
+#collectionSelect a {
+  display: block;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #eeeeee;
+  padding: 0 0.5em;
+  text-decoration: none;
+  color: #333333;
+}
+
+#collectionSelect a:hover {
+  background-color: #8db5fa;
+}
+
+.current-collection {
+  background-color: #4c8bf5;
+  color: #ffffff !important;
+}
+
+.current-collection a:hover {
+  background-color: #4c8bf5;
+}
+
+.code-wrapper {
+  flex: 1;
+  background-color: #ffffff;
+  border-left: 5px solid #f5f5f5;
+}

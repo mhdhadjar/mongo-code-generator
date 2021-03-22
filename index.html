@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mongo Code Generator</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <link href="./assets/styles.css" rel="stylesheet" />
+    <link href="https://myCDN.com/prism@v1.x/themes/prism.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="form-row server-info-form-row">
+      <div class="server-info-form-row-host">
+        <div>
+          <label for="hostInput">Host</label>
+        </div>
+        <input type="text" id="hostInput" placeholder="localhost" autofocus />
+      </div>
+      <div class="server-info-form-row-port">
+        <div>
+          <label for="portInput">Port</label>
+        </div>
+        <input type="text" id="portInput" placeholder="27017" />
+      </div>
+      <div class="server-info-form-row-port">
+        <div>&nbsp;</div>
+        <button id="connectButton">Connect</button>
+        <button id="disconnectButton">Disconnect</button>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="sidebar">
+        <div class="form-row">
+          <label disabled for="databasesSelect">Database</label>
+          <select id="databasesSelect" disabled></select>
+          <div id="collectionSelect"></div>
+        </div>
+      </div>
+      <div class="code-wrapper">
+        <div class="code-wrapper-header">
+          <select id="codeTypeSelect">
+            <option>Schema</option>
+            <option>Insert</option>
+            <option>Update</option>
+            <option>Delete</option>
+            <option>Find</option>
+          </select>
+        </div>
+        <pre><code></code></pre>
+      </div>
+    </div>
+    <script src="./dist/renderer.js"></script>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>
