@@ -10,10 +10,10 @@ it("getCamelCasedName", () => {
 it("getFieldType", () => {
   expect(GeneratorUtils.getFieldType(new Date())).toBe("Date");
   expect(GeneratorUtils.getFieldType(15)).toBe("Number");
-  expect(GeneratorUtils.getFieldType(new mongoose.Schema.Types.ObjectId(""))).toBe("mongoose.ObjectId");
+  expect(GeneratorUtils.getFieldType(new mongoose.Schema.Types.ObjectId(""))).toBe("mongoose.SchemaTypes.ObjectId");
   expect(GeneratorUtils.getFieldType("Some String Value")).toBe("String");
-  expect(GeneratorUtils.getFieldType(null)).toBe("mongoose.Mixed /* TODO:Check, data was 'null' */");
-  expect(GeneratorUtils.getFieldType(undefined)).toBe("mongoose.Mixed /* TODO:Check, data was '' */");
+  expect(GeneratorUtils.getFieldType(null)).toBe("mongoose.SchemaTypes.Mixed");
+  expect(GeneratorUtils.getFieldType(undefined)).toBe("mongoose.SchemaTypes.Mixed");
   expect(GeneratorUtils.getFieldType({ test: "This is a JSON object" })).toBe(__OBJECT_RECURSIVE__);
   expect(GeneratorUtils.getFieldType([{ test: "This is a JSON object" }])).toBe(__ARRAY_RECURSIVE__);
   expect(GeneratorUtils.getFieldType(["A", "B", "C"])).toBe(__ARRAY_RECURSIVE__);
