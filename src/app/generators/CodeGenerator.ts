@@ -5,6 +5,7 @@ import GeneratorUtils, { __ARRAY_RECURSIVE__, __OBJECT_RECURSIVE__ } from "./Gen
 export const generateSchema = (dbObject: any, collectionName: string): string => {
   const camelCasedName = GeneratorUtils.getCamelCasedName(collectionName);
   const schemaContent = setTypesRecursively(dbObject);
+
   const prettify = JSON.stringify(JSON.parse(schemaContent), null, 2).replace(/"/g, "");
 
   return `const ${camelCasedName}Schema = new Schema(${prettify});\n\nconst ${camelCasedName} = mongoose.model('${collectionName}', ${camelCasedName}Schema);`;

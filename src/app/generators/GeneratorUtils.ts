@@ -8,14 +8,16 @@ const getFieldType = (data: unknown): string => {
   if (typeof data === "number") return "Number";
   if (typeof data === "boolean") return "Boolean";
 
-  if (data instanceof mongoose.Schema.Types.ObjectId) return "mongoose.ObjectId";
+  if (data instanceof mongoose.Schema.Types.ObjectId) return "mongoose.SchemaTypes.ObjectId";
   if (data instanceof Array) return __ARRAY_RECURSIVE__;
   if (data instanceof Date) return "Date";
 
   const stringified = JSON.stringify(data) || "";
 
   if (stringified.startsWith("{")) return __OBJECT_RECURSIVE__;
-  return `mongoose.Mixed /* TODO:Check, data was '${stringified}' */`;
+
+  if (data && /^[0-9a-fA-F]{24,}$/.test(data.toString())) return `mongoose.SchemaTypes.ObjectId`;
+  return `mongoose.SchemaTypes.Mixed`;
 };
 
 const getCamelCasedName = (name: string): string => {
